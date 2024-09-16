@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Days of the month</h1>
+    <input type="text" id="month" placeholder="Enter a month">
+    <button onclick="checkMonth()">check</button>
+    <div id="result"></div>
+</body>
+
+</html>
+<script>
+    function checkMonth() {
+        // let yearMonth = document.getElementById('month').value.toLowerCase();
+        let yearMonth = document.getElementById('month').value.toLowerCase();
+        let output = ''
+        
+        if (yearMonth === 'january' || yearMonth === 'march' || yearMonth === 'may' || yearMonth === 'july' || yearMonth === 'august' || yearMonth === 'october' || yearMonth === 'november' || yearMonth === 'december') {
+
+            output = 'Month has 31 days'
+        }
+        else if (yearMonth === 'february') {
+            output = 'month has 28 days in a year and 29 days in a leap year'
+        } else if (yearMonth === 'april' || yearMonth === 'june' || yearMonth === 'september' || yearMonth === 'november') {
+            output = 'Month has 30 days'
+        } else {
+            output = 'invalid input, try again'
+        }
+
+        document.getElementById('result').textContent = output;
+    }
+</script>
